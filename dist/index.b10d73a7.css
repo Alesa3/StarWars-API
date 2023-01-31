@@ -1,5 +1,44 @@
 body {
-  background-color: pink;
+  background-color: #83a89a;
+  margin: 10px;
+  padding: 10px;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+p {
+  font-size: 14px;
+}
+
+h3 {
+  color: #fff;
+  margin: 150px;
+  padding: 50px;
+  font-size: 1.5em;
+}
+
+main {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+section {
+  width: 500px;
+  height: 500px;
+  color: #000;
+  text-align: center;
+  box-shadow: circle-drop-shadow(2, #dfddf1);
+  background-color: #f9f7eb;
+  border-radius: 10%;
+  justify-content: center;
+  align-items: center;
+  margin: -800px 10px 10px;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 2em;
+  display: flex;
 }
 
 /*# sourceMappingURL=index.b10d73a7.css.map */
