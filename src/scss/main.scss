@@ -81,23 +81,22 @@ h1 {
 }
 
 
-// .submit-button {
-//     font-family: 'Source Sans 3', sans-serif;
-//     border-radius: 20px;
-//     border: 0px solid grey;
-//     padding-right: 16px;
-//     padding-left: 16px;
-//     color: rgb(90, 167, 218);
-//     font-weight: bold;
-//     font-size: 16px;
+li {
+    font-size: 32px;
+    // margin-right: 200px;
+}
 
-// }
+button {
+    margin-left: 20px;
+    margin-top: 30px;
+    border: none;
+    padding: 4px;
+    font-family: 'Source Sans 3', sans-serif;
 
-// #planet-input {
-//     border: 1px solid rgb(90, 167, 218);
-//     border-radius: 10px;
-//     padding: 7px;
-//     margin: 20px;
+}
 
+button:hover {
+    color: $white;
+    background-color: rgb(35, 31, 55);
 
-// }
+}

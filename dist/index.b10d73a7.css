@@ -59,4 +59,21 @@ h1 {
   list-style-type: none;
 }
 
+li {
+  font-size: 32px;
+}
+
+button {
+  border: none;
+  margin-top: 30px;
+  margin-left: 20px;
+  padding: 4px;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+button:hover {
+  color: #fff;
+  background-color: #231f37;
+}
+
 /*# sourceMappingURL=index.b10d73a7.css.map */
