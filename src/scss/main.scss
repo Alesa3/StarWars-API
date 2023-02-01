@@ -5,14 +5,17 @@ body {
     font-family: 'Source Sans 3', sans-serif;
     padding: 10;
     margin: 10;
-
-
 }
 
 p {
-    font-size: 14px;
+    font-size: 16px;
 
 }
+
+// h4 {
+//     margin-top: -100px;
+//     padding: 100px;
+// }
 
 h3 {
     font-size: 1.5em;
@@ -36,7 +39,7 @@ main {
 }
 
 section {
-    background-color: $pink;
+    background-color: $h1;
     // border: $circle-border-width * 1px solid $green;
     // padding-inline-start: 20px;
     margin: 10px;
@@ -55,7 +58,7 @@ section {
 }
 
 h1 {
-    color: $white;
+    color: $h1;
     font-size: 7em;
     margin: 150px;
     padding: 50px;
@@ -68,6 +71,13 @@ h1 {
     text-align: center;
     font-family: 'Source Sans 3', sans-serif;
     margin-top: -180px;
+}
+
+#unorder-list {
+    list-style-type: none;
+    /* Remove bullets */
+    text-align: justify;
+
 }
 
 

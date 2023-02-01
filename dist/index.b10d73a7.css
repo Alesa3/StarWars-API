@@ -5,7 +5,7 @@ body {
 }
 
 p {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 h3 {
@@ -42,7 +42,7 @@ section {
 }
 
 h1 {
-  color: #fff;
+  color: #f9f7eb;
   margin: 150px;
   padding: 50px;
   font-size: 7em;
@@ -52,6 +52,11 @@ h1 {
   text-align: center;
   margin: -180px 50px 50px;
   font-family: "Source Sans 3", sans-serif;
+}
+
+#unorder-list {
+  text-align: justify;
+  list-style-type: none;
 }
 
 /*# sourceMappingURL=index.b10d73a7.css.map */
