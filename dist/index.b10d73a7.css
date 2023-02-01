@@ -1,17 +1,18 @@
 body {
-  background-color: #83a89a;
   margin: 10px;
   padding: 10px;
   font-family: "Source Sans 3", sans-serif;
 }
 
 p {
-  font-size: 14px;
+  margin-top: -200px;
+  font-size: 1em;
 }
 
 h3 {
   color: #fff;
-  margin: 150px;
+  border: 1px solid #231f37;
+  margin: -200px 150px 150px;
   padding: 50px;
   font-size: 1.5em;
 }
@@ -39,6 +40,19 @@ section {
   font-family: "Source Sans 3", sans-serif;
   font-size: 2em;
   display: flex;
+}
+
+h1 {
+  color: #fff;
+  margin: 150px;
+  padding: 50px;
+  font-size: 7em;
+}
+
+.submit-planet {
+  text-align: center;
+  margin: -180px 50px 50px;
+  font-family: "Source Sans 3", sans-serif;
 }
 
 /*# sourceMappingURL=index.b10d73a7.css.map */

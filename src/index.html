@@ -11,9 +11,16 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Source+Sans+3:wght@200&display=swap');
     </style>
+
+    <style>
+        body {
+            background-image: url('stars1.jpeg');
+        }
+    </style>
 </head>
 
 <body>
+    <h1>Star Wars</h1>
     <h3>Star Wars, is an epic space opera and franchise created by the American George Lucas, and primarily consists<br>
         of
         a series of films between 1977 and 2019. The first in the film series, Star Wars, <br>had its theatrical
@@ -21,9 +28,20 @@
 
         the United States on May 25, 1977, <br> and quickly became a worldwide popular culture phenomenon.</h3>
     <main>
-        <section id="characters">Five most popular characters</section>
-        <section id="movies">All Movies</section>
+        <section id="characters">
+            <p>All movies</p>
+        </section>
+
+        <section id="all">
+            <p>Selected Movie</p>
+        </section>
         <section>
+
+
+            <form class="submit-planet">
+                <label for="planet-input">Planet</label>
+                <input type="text" placeholder="1 for example." id="planet-input" name="planet" />
+                <button class="submit-button">Submit</button>
         </section>
     </main>
 </body>

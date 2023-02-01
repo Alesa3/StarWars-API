@@ -1,14 +1,17 @@
 @use 'sass-utils' as *;
 
 body {
-    background-color: $bgr-color;
+    // background-color: $bgr-color;
     font-family: 'Source Sans 3', sans-serif;
     padding: 10;
     margin: 10;
+
+
 }
 
 p {
-    font-size: 14px;
+    font-size: 1em;
+    margin-top: -200px;
 }
 
 h3 {
@@ -16,6 +19,10 @@ h3 {
     margin: 150px;
     padding: 50px;
     color: $white;
+    margin-top: -200px;
+    border: 1px solid rgb(35, 31, 55);
+
+
 
 }
 
@@ -46,3 +53,41 @@ section {
     box-shadow: circle-drop-shadow(2, $dark-blue);
     font-family: 'Source Sans 3', sans-serif;
 }
+
+h1 {
+    color: $white;
+    font-size: 7em;
+    margin: 150px;
+    padding: 50px;
+}
+
+
+
+.submit-planet {
+    margin: 50px;
+    text-align: center;
+    font-family: 'Source Sans 3', sans-serif;
+    margin-top: -180px;
+}
+
+
+// .submit-button {
+//     font-family: 'Source Sans 3', sans-serif;
+//     border-radius: 20px;
+//     border: 0px solid grey;
+//     padding-right: 16px;
+//     padding-left: 16px;
+//     color: rgb(90, 167, 218);
+//     font-weight: bold;
+//     font-size: 16px;
+
+// }
+
+// #planet-input {
+//     border: 1px solid rgb(90, 167, 218);
+//     border-radius: 10px;
+//     padding: 7px;
+//     margin: 20px;
+
+
+// }
