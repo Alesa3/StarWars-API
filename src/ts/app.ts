@@ -6,8 +6,6 @@ const characterInput = document.getElementById('char-input') as HTMLInputElement
 const displayFact = document.querySelector(".display-fact") as HTMLParagraphElement;
 
 type StarWarsMovie = {
-    title: string,
-    episode_id: number,
     opening_crawl: string
 }
 
@@ -58,23 +56,23 @@ function showMovies() {
 };
 showMovies();
 
-// async function getPlanet(id: string) {
-//     const response = await fetch(urlPlanets + id);
-//     const characterInfo = await response.json();
-//     return characterInfo;
-// }
+async function getPlanet(id: string) {
+    const response = await fetch(urlPlanets + id);
+    const characterInfo = await response.json();
+    return characterInfo;
+}
 
-// submitButton.addEventListener("click", (event) => {
-//     event.preventDefault();
+submitButton.addEventListener("click", (event) => {
+    event.preventDefault();
 
-//     if (characterInput.value.length > 0) {
-//         getPlanet(characterInput.value).then((characterInfo) => {
-//             displayFact.innerHTML = characterInfo.name;
-//             characterInput.value = "";
-//         });
+    if (characterInput.value.length > 0) {
+        getPlanet(characterInput.value).then((characterInfo) => {
+            displayFact.innerHTML = characterInfo.name;
+            characterInput.value = "";
+        });
 
-//     }
+    }
 
 
-// });
+});
 
