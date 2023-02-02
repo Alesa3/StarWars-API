@@ -20,7 +20,7 @@ type Character = {
 }
 
 const urlMovies = "https://swapi.dev/api/films/";
-const urlPlanets = "https://swapi.dev/api/planets/:";
+const urlCharacter = "https://swapi.dev/api/people/";
 
 
 async function getMovies() {
@@ -56,8 +56,8 @@ function showMovies() {
 };
 showMovies();
 
-async function getPlanet(id: string) {
-    const response = await fetch(urlPlanets + id);
+async function getCharacter(id: string) {
+    const response = await fetch(urlCharacter + id);
     const characterInfo = await response.json();
     return characterInfo;
 }
@@ -66,7 +66,7 @@ submitButton.addEventListener("click", (event) => {
     event.preventDefault();
 
     if (characterInput.value.length > 0) {
-        getPlanet(characterInput.value).then((characterInfo) => {
+        getCharacter(characterInput.value).then((characterInfo) => {
             displayFact.innerHTML = characterInfo.name;
             characterInput.value = "";
         });
