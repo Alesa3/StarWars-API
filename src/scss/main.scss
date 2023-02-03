@@ -83,6 +83,7 @@ h1 {
 
 li {
     font-size: 32px;
+    // padding: 16px;
     // margin-right: 200px;
 }
 
@@ -99,4 +100,9 @@ button:hover {
     color: $white;
     background-color: rgb(35, 31, 55);
 
+}
+
+#opening-crawl {
+    padding: 30px;
+    font-size: 22px;
 }

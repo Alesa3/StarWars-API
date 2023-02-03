@@ -1,8 +1,9 @@
 const movieSection = document.querySelector("#movie-section");
 const submitButton = document.querySelector(".submit-button");
 let unorderList = document.getElementById("unorder-list");
-const openingMovie = document.getElementById("openingMovie");
+let twoUnorderList = document.getElementById("two-unorder-list");
 const characterInput = document.getElementById("char-input");
+const openingCrawl = document.querySelector("#opening-crawl");
 const urlMovies = "https://swapi.dev/api/films/";
 const urlCharacter = "https://swapi.dev/api/people/";
 async function getMovies() {
@@ -24,8 +25,16 @@ function showMovies() {
             movieTitle.append(cardButton);
         }
         const aboutButton = document.getElementsByClassName("showAll");
-        for(let i = 0; i < aboutButton.length; i++)aboutButton[i].addEventListener("click", function() {
-            openingMovie.innerHTML = `${dataMovies.results[i].opening_crawl}`;
+        for(let i = 0; i < aboutButton.length; i++)// const movieTitleTwo = document.createElement('li');
+        // const movieDirector = document.createElement('li');
+        // const movieProd = document.createElement('li');
+        aboutButton[i].addEventListener("click", async function() {
+            openingCrawl.innerHTML = `${dataMovies.results[i].opening_crawl}`;
+        // movieTitleTwo.innerHTML = ` Title: ${dataMovies.results[i].title}`;
+        // movieDirector.innerHTML = `Director: ${dataMovies.results[i].director}`;
+        // movieProd.innerHTML = `Producer: ${dataMovies.results[i].producer}`;
+        // openingCrawl.innerHTML = `Story: ${dataMovies.results[i].opening_crawl}`;
+        // twoUnorderList.append(movieTitleTwo, openingCrawl, movieDirector, movieProd);
         });
     });
 }
@@ -42,7 +51,7 @@ async function getCharacter(id) {
     const characterInfo = await response.json();
     return characterInfo;
 }
-submitButton.addEventListener("click", (event)=>{
+submitButton.addEventListener("click", async (event)=>{
     event.preventDefault();
     if (characterInput.value.length > 0) getCharacter(characterInput.value).then((characterInfo)=>{
         displayName.innerHTML = `Name: ${characterInfo.name}`;

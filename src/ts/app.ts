@@ -1,12 +1,20 @@
 const movieSection = document.querySelector("#movie-section") as HTMLElement;
 const submitButton = document.querySelector(".submit-button") as HTMLButtonElement;
 let unorderList = document.getElementById('unorder-list') as HTMLUListElement;
-const openingMovie = document.getElementById('openingMovie') as HTMLParagraphElement;
+let twoUnorderList = document.getElementById('two-unorder-list') as HTMLUListElement;
 const characterInput = document.getElementById('char-input') as HTMLInputElement;
+
+const openingCrawl = document.querySelector("#opening-crawl") as HTMLParagraphElement;
 
 
 type StarWarsMovie = {
+
+    title: string,
     opening_crawl: string
+    release_date: number,
+    director: string,
+    producer: string,
+
 }
 
 type Character = {
@@ -45,8 +53,20 @@ function showMovies() {
 
         const aboutButton = document.getElementsByClassName("showAll");
         for (let i = 0; i < aboutButton.length; i++) {
-            aboutButton[i].addEventListener("click", function () {
-                openingMovie.innerHTML = `${dataMovies.results[i].opening_crawl}`;
+            // const movieTitleTwo = document.createElement('li');
+
+            // const movieDirector = document.createElement('li');
+            // const movieProd = document.createElement('li');
+
+            aboutButton[i].addEventListener("click", async function () {
+                openingCrawl.innerHTML = `${dataMovies.results[i].opening_crawl}`;
+                // movieTitleTwo.innerHTML = ` Title: ${dataMovies.results[i].title}`;
+                // movieDirector.innerHTML = `Director: ${dataMovies.results[i].director}`;
+                // movieProd.innerHTML = `Producer: ${dataMovies.results[i].producer}`;
+                // openingCrawl.innerHTML = `Story: ${dataMovies.results[i].opening_crawl}`;
+
+                // twoUnorderList.append(movieTitleTwo, openingCrawl, movieDirector, movieProd);
+
 
             });
         };
@@ -73,7 +93,7 @@ async function getCharacter(id: string) {
 }
 
 
-submitButton.addEventListener("click", (event) => {
+submitButton.addEventListener("click", async (event) => {
     event.preventDefault();
 
 
