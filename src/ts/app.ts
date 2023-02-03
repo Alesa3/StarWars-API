@@ -69,26 +69,29 @@ showMovies();
 
 
 async function getCharacter(search: any) {
-    const response = await fetch(urlCharacter + characterInput);
-    console.log(urlCharacter + characterInput.value)
+    const response = await fetch(urlCharacter + search);
+
     const characterInfo = await response.json();
     return characterInfo;
 }
 
 submitButton.addEventListener("click", async (event) => {
     event.preventDefault();
-    console.log(urlCharacter + characterInput)
 
 
     if (characterInput.value.length > 0) {
         getCharacter(characterInput.value).then((characterInfo) => {
-            console.log(characterInfo.results[0].name);
+
+            console.log(characterInfo.results[0]);
+
             displayName.innerHTML = `Name: ${characterInfo.results[0].name}`;
-            birthYear.innerHTML = `Birth Year: ${characterInfo.birth_year}`;
+            birthYear.innerHTML = `Birth Year: ${characterInfo.results[0].birth_year}`;
             eyeColor.innerHTML = `Eye color: ${characterInfo.eye_color}`;
-            displayGender.innerHTML = `Gender: ${characterInfo.gender}`;
+            displayGender.innerHTML = `Gender: ${characterInfo.results[0].gender}`;
             hairColor.innerHTML = `Hair color: ${characterInfo.hair_color}`;
-            displayHeight.innerHTML = `Height: ${characterInfo.height}`;
+            displayHeight.innerHTML = `Height: ${characterInfo.results[0].height}`;
+
+            characterInput.value = "";
 
         });
     }
