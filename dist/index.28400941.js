@@ -1,9 +1,8 @@
 const movieSection = document.querySelector("#movie-section");
-const submitButton = document.querySelector("submit-button");
+const submitButton = document.querySelector(".submit-button");
 let unorderList = document.getElementById("unorder-list");
 const openingMovie = document.getElementById("openingMovie");
 const characterInput = document.getElementById("char-input");
-const displayFact = document.querySelector(".display-fact");
 const urlMovies = "https://swapi.dev/api/films/";
 const urlCharacter = "https://swapi.dev/api/people/";
 async function getMovies() {
@@ -31,15 +30,27 @@ function showMovies() {
     });
 }
 showMovies();
+const displayName = document.querySelector(".display-name");
+const birthYear = document.querySelector(".birth-year");
+const eyeColor = document.querySelector(".eye-color");
+const displayGender = document.querySelector(".display-gender");
+const hairColor = document.querySelector(".hair-color");
+const displayHeight = document.querySelector(".display-height");
 async function getCharacter(id) {
     const response = await fetch(urlCharacter + id);
+    console.log(urlCharacter);
     const characterInfo = await response.json();
     return characterInfo;
 }
 submitButton.addEventListener("click", (event)=>{
     event.preventDefault();
     if (characterInput.value.length > 0) getCharacter(characterInput.value).then((characterInfo)=>{
-        displayFact.innerHTML = characterInfo.name;
+        displayName.innerHTML = `Name: ${characterInfo.name}`;
+        birthYear.innerHTML = `Birth Year: ${characterInfo.birth_year}`;
+        eyeColor.innerHTML = `Eye color: ${characterInfo.eye_color}`;
+        displayGender.innerHTML = `Gender: ${characterInfo.gender}`;
+        hairColor.innerHTML = `Hair color: ${characterInfo.hair_color}`;
+        displayHeight.innerHTML = `Height: ${characterInfo.height}`;
         characterInput.value = "";
     });
 });
