@@ -34,6 +34,7 @@ type Character = {
 
 const urlMovies = "https://swapi.dev/api/films/";
 const urlCharacter = "https://swapi.dev/api/people/?search=";
+const urlPlanet = "https://swapi.dev/api/planets/";
 
 
 async function getMovies() {
@@ -82,7 +83,6 @@ showMovies();
 
 async function getCharacter(search: any) {
     const response = await fetch(urlCharacter + search);
-
     const characterInfo = await response.json();
     return characterInfo;
 }
