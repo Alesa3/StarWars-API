@@ -55,8 +55,6 @@ function showMovies() {
     getMovies().then((dataMovies) => {
         for (let i = 0; i < dataMovies.results.length; i++) {
             const movieTitle = document.createElement('li');
-
-
             movieTitle.innerHTML = `${dataMovies.results[i].title}`;
             const cardButton = document.createElement('button');
             cardButton.className = "showAll";
@@ -66,15 +64,11 @@ function showMovies() {
             movieTitle.append(cardButton);
         }
 
-
         const aboutButton = document.getElementsByClassName("showAll");
-
         const movieHeader = document.createElement('h4');
 
         for (let i = 0; i < aboutButton.length; i++) {
             aboutButton[i].addEventListener("click", async function () {
-
-
                 movieHeader.innerHTML = `${dataMovies.results[i].title}`;
                 openingCrawl.innerHTML = `${dataMovies.results[i].opening_crawl}`;
 
