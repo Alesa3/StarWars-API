@@ -131,7 +131,7 @@ function getPlanetFact() {
 
         planetName.innerHTML = `${factsPlanet.name} is the home of Luke Skywalker and the first planet ever visited in Star Wars. Because of this, even if it is hated by Anakin and Luke alike, it holds a special place in the hearts of fans across the world. It's grimy and crime-ridden, yet teeming with kooky characters and intrigue. `;
         planetName.append(planetHeader);
-        //vill add a next button and display more facts with more urls
+        //will add a next button and display more facts with more urls
     })
 
 };
