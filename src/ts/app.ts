@@ -80,8 +80,6 @@ function showMovies() {
 };
 showMovies();
 
-
-
 async function getCharacter(search: any) {
     const response = await fetch(urlCharacter + search);
     const characterInfo = await response.json();
@@ -91,12 +89,8 @@ async function getCharacter(search: any) {
 submitButton.addEventListener("click", async (event) => {
     event.preventDefault();
 
-
     if (characterInput.value.length > 0) {
         getCharacter(characterInput.value).then((characterInfo) => {
-
-            // console.log(characterInfo.results[0]);
-
             displayName.innerHTML = `Name: ${characterInfo.results[0].name}`;
             birthYear.innerHTML = `Birth Year: ${characterInfo.results[0].birth_year}`;
             eyeColor.innerHTML = `Eye color: ${characterInfo.eye_color}`;
@@ -105,7 +99,6 @@ submitButton.addEventListener("click", async (event) => {
             displayHeight.innerHTML = `Height: ${characterInfo.results[0].height}`;
 
             characterInput.value = "";
-
         });
     }
 });
