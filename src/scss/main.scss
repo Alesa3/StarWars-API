@@ -18,7 +18,7 @@ h1 {
 }
 
 h2 {
-    margin-top: -390px;
+    margin-top: -200px;
 }
 
 //starwars description
@@ -106,7 +106,18 @@ li {
     // margin-right: 200px;
 }
 
-button {
+//See More button first section
+.showAll {
+    margin-left: 20px;
+    margin-top: 30px;
+    border: none;
+    padding: 4px;
+    font-family: 'Source Sans 3', sans-serif;
+
+}
+
+//button for input
+.submit-button {
     margin-left: 20px;
     margin-top: 30px;
     border: none;
@@ -144,4 +155,12 @@ article {
     text-align: center;
     box-shadow: circle-drop-shadow(2, $dark-blue);
     font-family: 'Source Sans 3', sans-serif;
+}
+
+.planet-name {
+    padding: 40px;
+    margin: 60px;
+    padding-right: 20px;
+    font-size: 22px;
+    margin-top: -20px;
 }
