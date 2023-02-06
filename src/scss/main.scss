@@ -7,27 +7,39 @@ body {
     margin: 10;
 }
 
-p {
-    font-size: 16px;
 
+//header title
+h1 {
+    color: $h1;
+    font-size: 7em;
+    margin: 100px;
+    padding: 50px;
+    margin-top: -10px;
 }
 
-// h4 {
-//     margin-top: -100px;
-//     padding: 100px;
-// }
+//starwars description
 
 h3 {
     font-size: 1.5em;
     margin: 150px;
     padding: 50px;
     color: $white;
-    margin-top: -200px;
+    margin-top: -150px;
     border: 1px solid rgb(35, 31, 55);
+}
 
-
+p {
+    font-size: 16px;
 
 }
+
+//form
+input {
+    padding: 5px;
+
+}
+
+
 
 main {
     padding: 0;
@@ -38,11 +50,13 @@ main {
     height: 100vh;
 }
 
+
 section {
     background-color: $h1;
     // border: $circle-border-width * 1px solid $green;
     // padding-inline-start: 20px;
-    margin: 10px;
+
+    margin: 20px;
     border-radius: 10%;
     width: $circle-diameter * 1px;
     height: $circle-diameter * 1px;
@@ -57,20 +71,15 @@ section {
     font-family: 'Source Sans 3', sans-serif;
 }
 
-h1 {
-    color: $h1;
-    font-size: 7em;
-    margin: 150px;
-    padding: 50px;
-}
 
 
 
-.submit-planet {
+
+.submit-character {
     margin: 50px;
     text-align: center;
     font-family: 'Source Sans 3', sans-serif;
-    margin-top: -180px;
+    margin-top: -20px;
 }
 
 #unorder-list {
@@ -79,6 +88,13 @@ h1 {
     text-align: justify;
 
 }
+
+// #opening-title {
+//     margin-top: -300px;
+//     margin-right: 60px;
+//     padding: 30px;
+//     font-size: 30px;
+// }
 
 
 li {
@@ -103,6 +119,6 @@ button:hover {
 }
 
 #opening-crawl {
-    padding: 30px;
+    padding: 20px;
     font-size: 22px;
 }

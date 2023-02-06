@@ -5,6 +5,8 @@ let unorderList = document.getElementById("unorder-list");
 let twoUnorderList = document.getElementById("two-unorder-list");
 const characterInput = document.getElementById("char-input");
 const openingCrawl = document.querySelector("#opening-crawl");
+const openingTitle = document.querySelector("#opening-title");
+//HMTL Elements for the Search function
 const displayName = document.querySelector(".display-name");
 const birthYear = document.querySelector(".birth-year");
 const eyeColor = document.querySelector(".eye-color");
@@ -32,8 +34,11 @@ function showMovies() {
             movieTitle.append(cardButton);
         }
         const aboutButton = document.getElementsByClassName("showAll");
+        const movieHeader = document.createElement("h4");
         for(let i = 0; i < aboutButton.length; i++)aboutButton[i].addEventListener("click", async function() {
+            movieHeader.innerHTML = `${dataMovies.results[i].title}`;
             openingCrawl.innerHTML = `${dataMovies.results[i].opening_crawl}`;
+            openingCrawl.append(movieHeader);
         });
     });
 }

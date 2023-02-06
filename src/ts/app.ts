@@ -5,7 +5,10 @@ let unorderList = document.getElementById('unorder-list') as HTMLUListElement;
 let twoUnorderList = document.getElementById('two-unorder-list') as HTMLUListElement;
 const characterInput = document.getElementById('char-input') as HTMLInputElement;
 const openingCrawl = document.querySelector("#opening-crawl") as HTMLParagraphElement;
+const openingTitle = document.querySelector("#opening-title") as HTMLDivElement;
 
+
+//HMTL Elements for the Search function
 const displayName = document.querySelector(".display-name") as HTMLParagraphElement;
 const birthYear = document.querySelector(".birth-year") as HTMLParagraphElement;
 const eyeColor = document.querySelector(".eye-color") as HTMLParagraphElement;
@@ -16,6 +19,7 @@ const displayHeight = document.querySelector(".display-height") as HTMLParagraph
 
 
 type StarWarsMovie = {
+    title: string,
     opening_crawl: string
 }
 
@@ -43,6 +47,7 @@ function showMovies() {
         for (let i = 0; i < dataMovies.results.length; i++) {
             const movieTitle = document.createElement('li');
 
+
             movieTitle.innerHTML = `${dataMovies.results[i].title}`;
             const cardButton = document.createElement('button');
             cardButton.className = "showAll";
@@ -56,9 +61,16 @@ function showMovies() {
 
         const aboutButton = document.getElementsByClassName("showAll");
 
+        const movieHeader = document.createElement('h4');
+
         for (let i = 0; i < aboutButton.length; i++) {
             aboutButton[i].addEventListener("click", async function () {
+
+
+                movieHeader.innerHTML = `${dataMovies.results[i].title}`;
                 openingCrawl.innerHTML = `${dataMovies.results[i].opening_crawl}`;
+
+                openingCrawl.append(movieHeader)
             });
         };
 
