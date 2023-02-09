@@ -92,15 +92,8 @@ section {
 
 }
 
-// #opening-title {
-//     margin-top: -300px;
-//     margin-right: 60px;
-//     padding: 30px;
-//     font-size: 30px;
-// }
 
-
-li {
+#unorder-list {
     font-size: 32px;
     // padding: 16px;
     // margin-right: 200px;
@@ -157,10 +150,38 @@ article {
     font-family: 'Source Sans 3', sans-serif;
 }
 
-.planet-name {
-    padding: 40px;
-    margin: 60px;
-    padding-right: 20px;
+.tato-planet {
+    padding: 10px;
+    margin: 10px;
+    padding-right: 10px;
     font-size: 22px;
     margin-top: -20px;
 }
+
+.musta-planet {
+    padding: 10px;
+    margin: 10px;
+    padding-right: 10px;
+    font-size: 22px;
+    margin-top: -20px;
+
+}
+
+.yavin-planet {
+    padding: 10px;
+    margin: 10px;
+    padding-right: 10px;
+    font-size: 22px;
+    margin-top: -20px;
+
+}
+
+
+// center {
+//     padding: 5px;
+//     margin: 40px;
+//     padding-right: 20px;
+//     font-size: 40px;
+//     margin-top: -20px;
+
+// }

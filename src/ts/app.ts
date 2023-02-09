@@ -1,5 +1,8 @@
+const urlMovies = "https://swapi.dev/api/films/";
+const urlCharacter = "https://swapi.dev/api/people/?search=";
+const urlPlanetsOne = "https://swapi.dev/api/planets/";
 
-//first section url
+//Movie title html elements
 const movieSection = document.querySelector("#movie-section") as HTMLElement;
 const selectMovie = document.querySelector("#select-movie") as HTMLElement;
 const submitButton = document.querySelector(".submit-button") as HTMLButtonElement;
@@ -18,14 +21,16 @@ const displayGender = document.querySelector(".display-gender") as HTMLParagraph
 const hairColor = document.querySelector(".hair-color") as HTMLParagraphElement;
 const displayHeight = document.querySelector(".display-height") as HTMLParagraphElement;
 
-//last section url
-const planetName = document.querySelector(".planet-name") as HTMLParagraphElement;
-const clickBtn = document.querySelector(".click-btn") as HTMLButtonElement;
+//last section url, planets
+const tatoPlanet = document.querySelector(".tato-planet") as HTMLUListElement;
+const mustaPlanet = document.querySelector(".musta-planet") as HTMLUListElement;
+const yavinPlanet = document.querySelector(".yavin-planet") as HTMLUListElement;
+const backBtn = document.querySelector("#back-btn") as HTMLButtonElement;
+const nextBtn = document.querySelector("#next-btn") as HTMLButtonElement;
+const number = document.querySelector("#number") as HTMLElement;
+const planetFacts = document.querySelector("#planet-facts") as HTMLElement;
+const errorMessage = document.getElementById('error-message') as HTMLSpanElement;
 
-
-const urlMovies = "https://swapi.dev/api/films/";
-const urlCharacter = "https://swapi.dev/api/people/?search=";
-const urlPlanetsOne = "https://swapi.dev/api/planets/1/";
 
 type StarWarsMovie = {
     title: string,
@@ -67,8 +72,10 @@ function showMovies() {
         const aboutButton = document.getElementsByClassName("showAll");
         const movieHeader = document.createElement('h4');
 
+
         for (let i = 0; i < aboutButton.length; i++) {
             aboutButton[i].addEventListener("click", async function () {
+
                 movieHeader.innerHTML = `${dataMovies.results[i].title}`;
                 openingCrawl.innerHTML = `${dataMovies.results[i].opening_crawl}`;
 
@@ -97,12 +104,13 @@ submitButton.addEventListener("click", async (event) => {
             displayGender.innerHTML = `Gender: ${characterInfo.results[0].gender}`;
             hairColor.innerHTML = `Hair color: ${characterInfo.hair_color}`;
             displayHeight.innerHTML = `Height: ${characterInfo.results[0].height}`;
-
             characterInput.value = "";
+
         });
+    } else {
+        alert('Please enter a name.');
     }
 });
-
 
 async function getPlanets() {
     const response = await fetch(urlPlanetsOne);
@@ -112,13 +120,12 @@ async function getPlanets() {
 
 function getPlanetFact() {
     getPlanets().then((factsPlanet) => {
+        tatoPlanet.innerHTML = `<li>${factsPlanet.results[0].name}is the home of Luke Skywalker and the first planet ever visited in Star Wars.</li>`;
 
-        const planetHeader = document.createElement('h2');
-        planetHeader.innerHTML = "Random facts about Planets";
+        mustaPlanet.innerHTML = `<li>${factsPlanet.results[4].name} is the disgusting swamp planet where Luke Skywalker seeks out the training of Yoda. This planet may seem like the perfect hiding spot for Yoda because it's one massive swamp, but the actual reason is actually much more nuanced than that.</li>`;
 
-        planetName.innerHTML = `${factsPlanet.name} is the home of Luke Skywalker and the first planet ever visited in Star Wars. Because of this, even if it is hated by Anakin and Luke alike, it holds a special place in the hearts of fans across the world. It's grimy and crime-ridden, yet teeming with kooky characters and intrigue. `;
-        planetName.append(planetHeader);
-        //will add a next button and display more facts with more urls
+        yavinPlanet.innerHTML = `<li>${factsPlanet.results[2].name} is the fourth moon of the planet Yavin. The moon is completely covered in jungles, making it a perfect home for the Rebel Base in A New Hope.</li>`
+
     })
 
 };
