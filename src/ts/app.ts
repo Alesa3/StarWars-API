@@ -12,6 +12,8 @@ const characterInput = document.getElementById('char-input') as HTMLInputElement
 const openingCrawl = document.querySelector("#opening-crawl") as HTMLParagraphElement;
 const openingTitle = document.querySelector("#opening-title") as HTMLDivElement;
 
+let disp = document.getElementById("display") as HTMLElement;
+
 
 //HMTL Elements for the Search function
 const displayName = document.querySelector(".display-name") as HTMLParagraphElement;
@@ -23,11 +25,9 @@ const displayHeight = document.querySelector(".display-height") as HTMLParagraph
 
 //last section url, planets
 const tatoPlanet = document.querySelector(".tato-planet") as HTMLUListElement;
-const mustaPlanet = document.querySelector(".musta-planet") as HTMLUListElement;
+const dagoPlanet = document.querySelector(".dago-planet") as HTMLUListElement;
 const yavinPlanet = document.querySelector(".yavin-planet") as HTMLUListElement;
-const backBtn = document.querySelector("#back-btn") as HTMLButtonElement;
-const nextBtn = document.querySelector("#next-btn") as HTMLButtonElement;
-const number = document.querySelector("#number") as HTMLElement;
+const mustaPlanet = document.querySelector(".musta-planet") as HTMLUListElement;
 const planetFacts = document.querySelector("#planet-facts") as HTMLElement;
 const errorMessage = document.getElementById('error-message') as HTMLSpanElement;
 
@@ -50,6 +50,11 @@ type Planet = {
     name: string
 }
 
+type numberOfCount = {
+    count: number | string,
+}
+
+
 async function getMovies() {
     const response = await fetch(urlMovies);
     const dataMovies = await response.json();
@@ -69,17 +74,25 @@ function showMovies() {
             movieTitle.append(cardButton);
         }
 
+        let count = 0;
         const aboutButton = document.getElementsByClassName("showAll");
-        const movieHeader = document.createElement('h4');
-
+        const movieHeader = document.createElement('h5');
 
         for (let i = 0; i < aboutButton.length; i++) {
             aboutButton[i].addEventListener("click", async function () {
 
+
+                count++;
+                disp.innerHTML = count;
+
+
                 movieHeader.innerHTML = `${dataMovies.results[i].title}`;
+
                 openingCrawl.innerHTML = `${dataMovies.results[i].opening_crawl}`;
 
                 openingCrawl.append(movieHeader)
+
+
             });
         };
 
@@ -120,11 +133,13 @@ async function getPlanets() {
 
 function getPlanetFact() {
     getPlanets().then((factsPlanet) => {
-        tatoPlanet.innerHTML = `<li>${factsPlanet.results[0].name}is the home of Luke Skywalker and the first planet ever visited in Star Wars.</li>`;
+        tatoPlanet.innerHTML = `<li>${factsPlanet.results[0].name} is the home of Luke Skywalker and the first planet ever visited in Star Wars.</li>`;
 
-        mustaPlanet.innerHTML = `<li>${factsPlanet.results[4].name} is the disgusting swamp planet where Luke Skywalker seeks out the training of Yoda. This planet may seem like the perfect hiding spot for Yoda because it's one massive swamp, but the actual reason is actually much more nuanced than that.</li>`;
+        dagoPlanet.innerHTML = `<li>${factsPlanet.results[4].name} is the disgusting swamp planet where Luke Skywalker seeks out the training of Yoda. <br>This planet may seem like the perfect hiding spot for Yoda because it's one massive swamp, but the actual reason is actually much more nuanced than that.</li>`;
 
         yavinPlanet.innerHTML = `<li>${factsPlanet.results[2].name} is the fourth moon of the planet Yavin. The moon is completely covered in jungles, making it a perfect home for the Rebel Base in A New Hope.</li>`
+
+        mustaPlanet.innerHTML = `<li>${factsPlanet.results[9].name} is famous for being the location of Anakin Skywalker's duel with his old master, Obi-Wan Kenobi. <br> It's certainly a striking location for a duel, seeing as its surface is 35% lava.</li>`
 
     })
 
