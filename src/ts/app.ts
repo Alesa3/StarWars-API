@@ -1,8 +1,9 @@
+/*--- Url ---*/
 const urlMovies = "https://swapi.dev/api/films/";
 const urlCharacter = "https://swapi.dev/api/people/?search=";
 const urlPlanetsOne = "https://swapi.dev/api/planets/";
 
-//Movie title html elements
+/*--- Movie title html elements ---*/
 const movieSection = document.querySelector("#movie-section") as HTMLElement;
 const selectMovie = document.querySelector("#select-movie") as HTMLElement;
 const submitButton = document.querySelector(".submit-button") as HTMLButtonElement;
@@ -12,10 +13,7 @@ const characterInput = document.getElementById('char-input') as HTMLInputElement
 const openingCrawl = document.querySelector("#opening-crawl") as HTMLParagraphElement;
 const openingTitle = document.querySelector("#opening-title") as HTMLDivElement;
 
-let disp = document.getElementById("display") as HTMLElement;
-
-
-//HMTL Elements for the Search function
+/*--- HMTL Elements for the Search function --*/
 const displayName = document.querySelector(".display-name") as HTMLParagraphElement;
 const birthYear = document.querySelector(".birth-year") as HTMLParagraphElement;
 const eyeColor = document.querySelector(".eye-color") as HTMLParagraphElement;
@@ -23,7 +21,7 @@ const displayGender = document.querySelector(".display-gender") as HTMLParagraph
 const hairColor = document.querySelector(".hair-color") as HTMLParagraphElement;
 const displayHeight = document.querySelector(".display-height") as HTMLParagraphElement;
 
-//last section url, planets
+/*--- Planet section ---*/
 const tatoPlanet = document.querySelector(".tato-planet") as HTMLUListElement;
 const dagoPlanet = document.querySelector(".dago-planet") as HTMLUListElement;
 const yavinPlanet = document.querySelector(".yavin-planet") as HTMLUListElement;
@@ -54,6 +52,8 @@ type numberOfCount = {
     count: number | string,
 }
 
+let addToFav: string[] = [];
+
 
 async function getMovies() {
     const response = await fetch(urlMovies);
@@ -74,31 +74,22 @@ function showMovies() {
             movieTitle.append(cardButton);
         }
 
-        let count = 0;
         const aboutButton = document.getElementsByClassName("showAll");
         const movieHeader = document.createElement('h5');
 
         for (let i = 0; i < aboutButton.length; i++) {
             aboutButton[i].addEventListener("click", async function () {
-
-
-                count++;
-                disp.innerHTML = count;
-
-
                 movieHeader.innerHTML = `${dataMovies.results[i].title}`;
-
                 openingCrawl.innerHTML = `${dataMovies.results[i].opening_crawl}`;
-
                 openingCrawl.append(movieHeader)
-
 
             });
         };
-
     });
-};
+}
+
 showMovies();
+
 
 async function getCharacter(search: any) {
     const response = await fetch(urlCharacter + search);
@@ -125,6 +116,10 @@ submitButton.addEventListener("click", async (event) => {
     }
 });
 
+
+
+/*--- get Planets ---*/
+
 async function getPlanets() {
     const response = await fetch(urlPlanetsOne);
     const factsPlanet = await response.json();
@@ -133,15 +128,27 @@ async function getPlanets() {
 
 function getPlanetFact() {
     getPlanets().then((factsPlanet) => {
-        tatoPlanet.innerHTML = `<li>${factsPlanet.results[0].name} is the home of Luke Skywalker and the first planet ever visited in Star Wars.</li>`;
 
-        dagoPlanet.innerHTML = `<li>${factsPlanet.results[4].name} is the disgusting swamp planet where Luke Skywalker seeks out the training of Yoda. <br>This planet may seem like the perfect hiding spot for Yoda because it's one massive swamp, but the actual reason is actually much more nuanced than that.</li>`;
+        tatoPlanet.innerHTML = `<li>${factsPlanet.results[0].name} 
+        is the home of Luke Skywalker and the first planet ever visited in Star Wars.</li>`;
 
-        yavinPlanet.innerHTML = `<li>${factsPlanet.results[2].name} is the fourth moon of the planet Yavin. The moon is completely covered in jungles, making it a perfect home for the Rebel Base in A New Hope.</li>`
 
-        mustaPlanet.innerHTML = `<li>${factsPlanet.results[9].name} is famous for being the location of Anakin Skywalker's duel with his old master, Obi-Wan Kenobi. <br> It's certainly a striking location for a duel, seeing as its surface is 35% lava.</li>`
+        dagoPlanet.innerHTML = `<li>${factsPlanet.results[4].name} 
+        is the disgusting swamp planet where Luke Skywalker seeks out the training of Yoda. 
+        <br>This planet may seem like the perfect hiding spot for Yoda because it's one massive swamp, 
+        but the actual reason is actually much more nuanced than that.</li>`;
+
+
+        yavinPlanet.innerHTML = `<li>${factsPlanet.results[2].name} 
+        is the fourth moon of the planet Yavin. 
+        The moon is completely covered in jungles, making it a perfect home for the Rebel Base in A New Hope.</li>`
+
+
+        mustaPlanet.innerHTML = `<li>${factsPlanet.results[9].name} 
+        is famous for being the location of Anakin Skywalker's duel with his old master,
+        Obi-Wan Kenobi. <br> It's certainly a striking location for a duel, seeing as its surface is 35% lava.</li>`
 
     })
-
 };
+
 getPlanetFact();
