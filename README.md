@@ -1,7 +1,7 @@
 
 # StarWars API
 
-This is my final project in my Advanced Javascript course. In this project I have used JSON, AXAJ and Typescript to be able to fetch from an API and display its data. Nonetheless, I have also developed my skills in Sass.
+This is my final project in my Advanced Javascript course. I have used JSON, AXAJ and Typescript to be able to fetch from an API and display its data. This project uses the https://swapi.dev/ API.
 
 ## Technologies
 - Typescript
