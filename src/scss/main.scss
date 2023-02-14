@@ -131,15 +131,6 @@ section {
 
 }
 
-
-@mixin planet {
-    padding: 10px;
-    margin: 30px;
-    padding-right: 10px;
-    font-size: 20px;
-    margin-top: -10px;
-}
-
 /*--- Planet ---*/
 article {
     background-color: $text-sect;
@@ -172,10 +163,6 @@ article {
 }
 
 
-@mixin character {
-    font-size: 20px;
-}
-
 section {
 
     .display-name,
@@ -191,7 +178,7 @@ section {
 
 /*------ Mobile version ------*/
 
-@media all and (max-width: 1000px) {
+@media all and (max-width: 1500px) {
 
     center {
         article {

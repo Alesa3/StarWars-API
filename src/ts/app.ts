@@ -25,7 +25,7 @@ const tatoPlanet = document.querySelector(".tato-planet") as HTMLUListElement;
 const dagoPlanet = document.querySelector(".dago-planet") as HTMLUListElement;
 const yavinPlanet = document.querySelector(".yavin-planet") as HTMLUListElement;
 const mustaPlanet = document.querySelector(".musta-planet") as HTMLUListElement;
-// const planetFacts = document.querySelector("#planet-facts") as HTMLElement;
+const planetFacts = document.querySelector("#planet-facts") as HTMLElement;
 const errorMessage = document.getElementById('error-message') as HTMLSpanElement;
 
 
@@ -112,8 +112,6 @@ submitButton.addEventListener("click", async (event) => {
         alert('Please enter a name.');
     }
 });
-
-
 
 /*--- get Planets ---*/
 
