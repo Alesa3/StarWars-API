@@ -86,7 +86,7 @@ function showMovies() {
 showMovies();
 
 
-/*-- Get character info once submitting the form --*/
+/*-- Search button that takes user input and returns correct information --*/
 
 async function getCharacter(search: any) {
     const response = await fetch(urlCharacter + search);
@@ -127,17 +127,14 @@ function getPlanetFact() {
         tatoPlanet.innerHTML = `<li>${factsPlanet.results[0].name} 
         is the home of Luke Skywalker and the first planet ever visited in Star Wars.</li>`;
 
-
         dagoPlanet.innerHTML = `<li>${factsPlanet.results[4].name} 
         is the disgusting swamp planet where Luke Skywalker seeks out the training of Yoda. 
         <br>This planet may seem like the perfect hiding spot for Yoda because it's one massive swamp, 
         but the actual reason is actually much more nuanced than that.</li>`;
 
-
         yavinPlanet.innerHTML = `<li>${factsPlanet.results[2].name} 
         is the fourth moon of the planet Yavin. 
         The moon is completely covered in jungles, making it a perfect home for the Rebel Base in A New Hope.</li>`
-
 
         mustaPlanet.innerHTML = `<li>${factsPlanet.results[9].name} 
         is famous for being the location of Anakin Skywalker's duel with his old master,
