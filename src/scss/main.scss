@@ -2,23 +2,14 @@
 
 
 
-
-// body {
-//     font-family: 'Source Sans 3', sans-serif;
-//     padding: 10;
-//     margin: 10;
-// max-width: 100%;
-
+/* --- Headers ---- */
 h1 {
-    color: $h1;
+    color: $text-sect;
     font-size: 7em;
     margin: 100px;
     padding: 65px;
     margin-top: -10px;
 }
-
-// }
-
 
 h2 {
     margin-top: -200px;
@@ -29,7 +20,7 @@ h3 {
     font-size: 1.5em;
     margin: 150px;
     padding: 50px;
-    color: $white;
+    color: $text-sect;
     margin-top: -150px;
     border: 1px solid $sec-border;
     max-width: 1500px;
@@ -37,7 +28,7 @@ h3 {
 }
 
 
-/* ------- selected movie---- */
+/* ------- Selected movie---- */
 h5 {
     font-size: 26px;
     margin-bottom: -20px;
@@ -50,7 +41,7 @@ p {
 }
 
 
-/* --------- Input ---------*/
+/* --------- Input form ---------*/
 form {
     input {
         padding: 5px;
@@ -74,7 +65,7 @@ form {
     }
 }
 
-
+/* --- Three sections --- */
 main {
     padding: 0;
     margin: 0;
@@ -84,7 +75,7 @@ main {
     height: 100vh;
 
     section {
-        background-color: $h1;
+        background-color: $text-sect;
         border: $circle-border-width * 0.5px solid $sec-border;
         margin: 20px;
         border-radius: 10%;
@@ -94,7 +85,7 @@ main {
         align-items: center;
         justify-content: center;
         font-size: 2em;
-        color: $black;
+        color: $text-color;
         margin-top: -800px;
         text-align: center;
         box-shadow: circle-drop-shadow(2, $sec-border);
@@ -105,11 +96,17 @@ main {
 
 
 /* -------- All buttons -------- */
+
+button {
+    margin: 20px;
+}
+
 button:hover {
-    color: $white;
+    color: $text-sect;
     background-color: rgb(35, 31, 55);
 
 }
+
 
 
 /* ----- Movie section ------ */
@@ -117,7 +114,6 @@ section {
     #unorder-list {
         /* Remove bullets */
         list-style-type: none;
-
         text-align: justify;
         font-size: 32px;
 
@@ -151,7 +147,7 @@ section {
 }
 
 article {
-    background-color: $h1;
+    background-color: $text-sect;
     border: $circle-border-width * 0.5px solid #f1d0ff;
     padding-inline-start: 20px;
     margin: 20px;
@@ -162,10 +158,10 @@ article {
     align-items: center;
     justify-content: center;
     font-size: 2em;
-    color: $black;
+    color: $text-color;
     margin-top: -650px;
     text-align: center;
-    box-shadow: circle-drop-shadow(2, $section-color);
+    box-shadow: circle-drop-shadow(2, $text-sect);
     font-family: 'Source Sans 3', sans-serif;
 
     h4 {
@@ -180,9 +176,27 @@ article {
     }
 }
 
+
+@mixin character {
+    font-size: 20px;
+}
+
+section {
+
+    .display-name,
+    .birth-year,
+    .eye-color,
+    .display-gender,
+    .hair-color,
+    .display-height {
+        @include character;
+    }
+}
+
+
 /*------ Mobile version ------*/
 
-@media all and (max-width: 1300px) {
+@media all and (max-width: 1000px) {
 
     center {
         article {
@@ -209,9 +223,8 @@ article {
         margin-bottom: 300px;
         margin-left: 65px;
         padding: 40px;
-        color: $white;
+        color: $text-sect;
         margin-top: -50px;
-        // border: 1px solid $sec-border;
     }
 
     h5 {
@@ -224,22 +237,18 @@ article {
             padding: 70;
             margin: 20px;
             display: flex;
-            // align-items: center;
-            // justify-content: center;
             width: 1400px;
             margin-top: 200px;
             height: 100vh;
             margin-left: -20px;
 
             section {
-                background-color: $h1;
-                border: $circle-border-width * 0.5px solid $sec-border;
                 margin: 10px;
                 border-radius: 10%;
                 width: 1500px;
                 height: 500px;
                 font-size: 2em;
-                color: $black;
+                color: $text-color;
                 margin-top: -1000px;
                 max-width: 100%;
                 padding: 0;
@@ -247,13 +256,13 @@ article {
 
             #unorder-list {
                 font-size: 26px;
-                margin-right: 5px;
+                padding: 20px;
 
             }
 
             #opening-crawl {
                 padding: 20px;
-                font-size: 14px;
+                font-size: 20px;
             }
 
 

@@ -48,12 +48,8 @@ type Planet = {
     name: string
 }
 
-type numberOfCount = {
-    count: number | string,
-}
 
-let addToFav: string[] = [];
-
+/* Function to fetch all movie titles. While pressing on them, more info displayed on another section */
 
 async function getMovies() {
     const response = await fetch(urlMovies);
@@ -91,6 +87,8 @@ function showMovies() {
 showMovies();
 
 
+/*-- Get character info once submitting the form --*/
+
 async function getCharacter(search: any) {
     const response = await fetch(urlCharacter + search);
     const characterInfo = await response.json();
@@ -104,9 +102,9 @@ submitButton.addEventListener("click", async (event) => {
         getCharacter(characterInput.value).then((characterInfo) => {
             displayName.innerHTML = `Name: ${characterInfo.results[0].name}`;
             birthYear.innerHTML = `Birth Year: ${characterInfo.results[0].birth_year}`;
-            eyeColor.innerHTML = `Eye color: ${characterInfo.eye_color}`;
+            eyeColor.innerHTML = `Eye color: ${characterInfo.results[0].eye_color}`;
             displayGender.innerHTML = `Gender: ${characterInfo.results[0].gender}`;
-            hairColor.innerHTML = `Hair color: ${characterInfo.hair_color}`;
+            hairColor.innerHTML = `Hair color: ${characterInfo.results[0].hair_color}`;
             displayHeight.innerHTML = `Height: ${characterInfo.results[0].height}`;
             characterInput.value = "";
 
