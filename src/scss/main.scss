@@ -41,7 +41,7 @@ p {
 }
 
 
-/* --------- Input form ---------*/
+/* ---- Input form ----*/
 form {
     input {
         padding: 5px;
@@ -95,16 +95,11 @@ main {
 }
 
 
-/* -------- All buttons -------- */
-
-button {
-    margin: 20px;
-}
+/* ---- All buttons hover ---- */
 
 button:hover {
     color: $text-sect;
     background-color: rgb(35, 31, 55);
-
 }
 
 
@@ -143,7 +138,6 @@ section {
     padding-right: 10px;
     font-size: 20px;
     margin-top: -10px;
-
 }
 
 article {
@@ -210,9 +204,6 @@ section {
             padding: 60px;
             margin-top: -10px;
             display: row;
-            // margin-bottom: 40px;
-
-
         }
     }
 

@@ -8,7 +8,6 @@ const movieSection = document.querySelector("#movie-section") as HTMLElement;
 const selectMovie = document.querySelector("#select-movie") as HTMLElement;
 const submitButton = document.querySelector(".submit-button") as HTMLButtonElement;
 let unorderList = document.getElementById('unorder-list') as HTMLUListElement;
-let twoUnorderList = document.getElementById('two-unorder-list') as HTMLUListElement;
 const characterInput = document.getElementById('char-input') as HTMLInputElement;
 const openingCrawl = document.querySelector("#opening-crawl") as HTMLParagraphElement;
 const openingTitle = document.querySelector("#opening-title") as HTMLDivElement;
@@ -26,7 +25,7 @@ const tatoPlanet = document.querySelector(".tato-planet") as HTMLUListElement;
 const dagoPlanet = document.querySelector(".dago-planet") as HTMLUListElement;
 const yavinPlanet = document.querySelector(".yavin-planet") as HTMLUListElement;
 const mustaPlanet = document.querySelector(".musta-planet") as HTMLUListElement;
-const planetFacts = document.querySelector("#planet-facts") as HTMLElement;
+// const planetFacts = document.querySelector("#planet-facts") as HTMLElement;
 const errorMessage = document.getElementById('error-message') as HTMLSpanElement;
 
 
