@@ -1,14 +1,9 @@
 @use 'sass-utils' as *;
 
-
-
 /* --- Headers ---- */
 h1 {
     color: $text-sect;
-    font-size: 7em;
-    margin: 100px;
-    padding: 65px;
-    margin-top: -10px;
+    @include h1-desk;
 }
 
 h2 {
@@ -17,13 +12,9 @@ h2 {
 
 
 h3 {
-    font-size: 1.5em;
-    margin: 150px;
-    padding: 50px;
     color: $text-sect;
-    margin-top: -150px;
     border: 1px solid $sec-border;
-    max-width: 1500px;
+    @include h3-desk;
 
 }
 
@@ -49,48 +40,28 @@ form {
     }
 
     .submit-button {
-        margin-left: 20px;
-        margin-top: 30px;
-        border: none;
-        padding: 4px;
-        font-family: 'Source Sans 3', sans-serif;
+        @include submit-btn;
 
     }
 
     .submit-character {
-        margin: 50px;
-        text-align: center;
-        font-family: 'Source Sans 3', sans-serif;
-        margin-top: -20px;
+        @include character;
     }
 }
 
 /* --- Three sections --- */
 main {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    @include main;
 
     section {
         background-color: $text-sect;
         border: $circle-border-width * 0.5px solid $sec-border;
-        margin: 20px;
-        border-radius: 10%;
+        box-shadow: circle-drop-shadow(2, $sec-border);
+        color: $text-color;
         width: $circle-diameter * 1px;
         height: $circle-diameter * 1px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2em;
-        color: $text-color;
-        margin-top: -800px;
-        text-align: center;
-        box-shadow: circle-drop-shadow(2, $sec-border);
-        font-family: 'Source Sans 3', sans-serif;
-        max-width: 100%;
+        @include sec-desktop;
+
     }
 }
 
@@ -116,12 +87,7 @@ section {
 
     /* ----- SeeMore button, movie section ----- */
     .showAll {
-        margin-left: 20px;
-        margin-top: 30px;
-        border: none;
-        padding: 4px;
-        font-family: 'Source Sans 3', sans-serif;
-
+        @include more-btn;
     }
 
     #opening-crawl {
@@ -135,20 +101,10 @@ section {
 article {
     background-color: $text-sect;
     border: $circle-border-width * 0.5px solid #f1d0ff;
-    padding-inline-start: 20px;
-    margin: 20px;
-    border-radius: 70%;
-    width: 1150px;
-    height: 650px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2em;
     color: $text-color;
-    margin-top: -650px;
-    text-align: center;
     box-shadow: circle-drop-shadow(2, $text-sect);
-    font-family: 'Source Sans 3', sans-serif;
+    @include planet-article;
+
 
     h4 {
         margin-top: -30px;
@@ -188,22 +144,13 @@ section {
 
     body {
         h1 {
-            margin: 20px;
-            padding: 60px;
-            margin-top: -10px;
-            display: row;
+            @include mobile-h1;
         }
     }
 
     h3 {
-        width: 1280px;
-        margin-left: 200px;
-        font-size: 18px;
-        margin-bottom: 300px;
-        margin-left: 65px;
-        padding: 40px;
         color: $text-sect;
-        margin-top: -50px;
+        @include mobile-h3;
     }
 
     h5 {
@@ -213,24 +160,11 @@ section {
     html,
     body {
         main {
-            padding: 70;
-            margin: 20px;
-            display: flex;
-            width: 1400px;
-            margin-top: 200px;
-            height: 100vh;
-            margin-left: -20px;
+            @include mobile-main;
 
             section {
-                margin: 10px;
-                border-radius: 10%;
-                width: 1500px;
-                height: 500px;
-                font-size: 2em;
                 color: $text-color;
-                margin-top: -1000px;
-                max-width: 100%;
-                padding: 0;
+                @include mobile-sec;
             }
 
             #unorder-list {
