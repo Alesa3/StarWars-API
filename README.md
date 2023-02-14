@@ -15,7 +15,7 @@ With this program, the user is able to see all the movie titles from Star Wars a
 
 There is also an input field where the user can submit a character name which will display info about that specific character. 
 
-At last, I have showcased planet names and random facts about each and one of them.
+At last, I have showcased planet names by fetching from the API and added random facts about each and one of them.
 
 
 ## How to clone, install and run
