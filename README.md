@@ -6,8 +6,8 @@ This is my final project in my Advanced Javascript course. In this project I hav
 ## Technologies
 - Typescript
 - AJAX
-- JSON
 - SASS
+- HTML
 - Parcel Build Tool
 
 ## What can I do? 
