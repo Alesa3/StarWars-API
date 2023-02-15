@@ -42,6 +42,7 @@ npm install
 ```
 npm run start
 ```
+5) Open http://localhost:1234/
 
 
 Connect with me on Linkedin :)
