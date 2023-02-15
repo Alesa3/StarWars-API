@@ -44,4 +44,5 @@ npm run start
 ```
 
 
-Done! Have fun :) 
+Connect with me on Linkedin :)
+www.linkedin.com/in/alesa-shala
