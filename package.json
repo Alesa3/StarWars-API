@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "source": "src/index.html",
   "scripts": {
-  "start": "parcel src/index.html",
-  "build": "parcel build src/index.html"
-}
+    "start": "parcel"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Alesa3/Starwars-Api.git"
@@ -24,3 +22,4 @@
     "parcel": "^2.8.3"
   }
 }
+
