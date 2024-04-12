@@ -2,10 +2,10 @@
   "name": "starwars-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel"
+    "start": "parcel",
+    "build": "parcel build src/index.html"
   },
   "repository": {
     "type": "git",
